@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import ScheduleTable from '../components/ScheduleTable.astro';
+---
+
+<Layout title="Horarios & Ubicación | CWH Jaguares">
+	<Navbar />
+	
+	<main class="bg-zinc-950 pt-24 pb-0">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      
+      <div class="text-center mb-16 relative">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/20 rounded-full blur-[80px] pointer-events-none"></div>
+        <h1 class="text-4xl md:text-6xl font-outfit font-bold text-white mb-6 relative z-10">Calendario de Entrenamiento</h1>
+        <p class="text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+          Mantén la consistencia. Encuentra el horario perfecto para tu ritmo de vida y estilo de aprendizaje. 
+        </p>
+      </div>
+
+      <!-- Componente Tabla -->
+      <ScheduleTable />
+
+      <div class="mt-32 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-zinc-900/40 p-10 md:p-14 rounded-3xl border border-white/5">
+        <div>
+          <span class="text-accent font-semibold tracking-widest uppercase text-sm mb-4 inline-block">Nuestra Base de Operaciones</span>
+          <h2 class="text-3xl md:text-5xl font-outfit font-bold text-white mb-6">Dojang Central</h2>
+          <p class="text-gray-400 font-light leading-relaxed mb-8">
+            Nuestras instalaciones cuentan con 200m2 de tatami profesional (piso acolchado), vestidores completos, equipo especializado de golpeo, y una zona de espera con excelente visibilidad para padres.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="bg-white/5 p-3 rounded-full mr-4 shadow-inner border border-white/10 flex-shrink-0">
+                <svg class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-outfit font-bold text-lg text-white mb-1">Dirección</h4>
+                <p class="text-gray-400 text-sm font-light">Emilio Carranza 98, Col. Zapopan Centro.<br />Zapopan, Jalisco. 45100</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-white/5 p-3 rounded-full mr-4 shadow-inner border border-white/10 flex-shrink-0">
+                <svg class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-outfit font-bold text-lg text-white mb-1">Recepción</h4>
+                <p class="text-gray-400 text-sm font-light">Lunes a Viernes: 3:30 PM - 9:30 PM<br />Sábados: 8:30 AM - 2:00 PM</p>
+              </div>
+            </div>
+            
+            <a href="/contacto" class="inline-flex mt-8 items-center text-sm font-outfit font-bold uppercase tracking-widest text-[#0F1C2E] bg-white rounded-full py-3 px-8 hover:bg-gray-200 transition-colors">
+              Agendar Visita
+            </a>
+          </div>
+        </div>
+
+        <!-- Mapa Embebido de Google Maps (Ejemplo genérico) -->
+        <div class="w-full h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-[0_20px_40px_-20px_rgba(0,0,0,0.8)] border border-white/10 relative group">
+          <div class="absolute inset-0 bg-primary/20 pointer-events-none group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119421.19690184282!2d-103.4560934!3d20.6738928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b18cb52fd39b%3A0xd43d84c1768b420f!2sGuadalajara%2C%20Jal.!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            class="filter grayscale invert-[0.9] contrast-[1.2]"
+          ></iframe>
+        </div>
+      </div>
+		</div>
+	</main>
+
+	<Footer />
+  <WhatsAppButton phoneNumber="5213313941272" message="Hola, busco informes sobre horarios de clases." />
+</Layout>

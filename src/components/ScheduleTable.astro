@@ -1,0 +1,224 @@
+---
+interface ClassSession {
+  day: string;
+  time: string;
+  discipline: 'Taekwondo' | 'Hapkido' | 'Ambos';
+  level: string;
+  instructor: string;
+}
+
+const scheduleData: ClassSession[] = [
+  // Lunes
+  { day: 'Lunes', time: '16:00 - 17:00', discipline: 'Taekwondo', level: 'Infantil (Principiantes)', instructor: 'Carlos M.' },
+  { day: 'Lunes', time: '17:00 - 18:00', discipline: 'Taekwondo', level: 'Infantil (Avanzados)', instructor: 'Carlos M.' },
+  { day: 'Lunes', time: '18:00 - 19:30', discipline: 'Taekwondo', level: 'Adultos (Todos los niveles)', instructor: 'Ana P.' },
+  { day: 'Lunes', time: '19:30 - 21:00', discipline: 'Hapkido', level: 'Adultos (Todos los niveles)', instructor: 'David R.' },
+  
+  // Miércoles
+  { day: 'Miércoles', time: '16:00 - 17:00', discipline: 'Taekwondo', level: 'Infantil (Principiantes)', instructor: 'Carlos M.' },
+  { day: 'Miércoles', time: '17:00 - 18:00', discipline: 'Taekwondo', level: 'Infantil (Avanzados)', instructor: 'Carlos M.' },
+  { day: 'Miércoles', time: '18:00 - 19:30', discipline: 'Taekwondo', level: 'Adultos (Todos los niveles)', instructor: 'Ana P.' },
+  { day: 'Miércoles', time: '19:30 - 21:00', discipline: 'Hapkido', level: 'Adultos (Todos los niveles)', instructor: 'David R.' },
+  
+  // Viernes
+  { day: 'Viernes', time: '16:00 - 17:00', discipline: 'Taekwondo', level: 'Infantil (Combate)', instructor: 'Ana P.' },
+  { day: 'Viernes', time: '17:00 - 18:30', discipline: 'Taekwondo', level: 'Adultos (Combate)', instructor: 'Ana P.' },
+  { day: 'Viernes', time: '18:30 - 20:00', discipline: 'Hapkido', level: 'Defensa Personal Aplicada', instructor: 'David R.' },
+  
+  // Sábado
+  { day: 'Sábado', time: '09:00 - 11:00', discipline: 'Taekwondo', level: 'Equipo Especial / Seleccionados', instructor: 'Carlos M. / Ana P.' },
+  { day: 'Sábado', time: '11:00 - 13:00', discipline: 'Hapkido', level: 'Seminario Temático / Armas', instructor: 'David R.' }
+];
+
+const days = ['Lunes', 'Miércoles', 'Viernes', 'Sábado'];
+---
+
+<div class="w-full max-w-6xl mx-auto">
+  
+  <!-- Filtros -->
+  <div class="flex flex-wrap justify-center gap-3 mb-10">
+    <button class="filter-btn active px-6 py-2.5 rounded-full text-sm font-outfit font-semibold uppercase tracking-widest transition-all duration-300 bg-white text-zinc-950 shadow-[0_0_15px_rgba(255,255,255,0.3)] border border-transparent" data-filter="all">
+      Todos
+    </button>
+    <button class="filter-btn px-6 py-2.5 rounded-full text-sm font-outfit font-semibold uppercase tracking-widest transition-all duration-300 bg-transparent text-gray-400 border border-white/10 hover:border-white/30 hover:text-white" data-filter="Taekwondo">
+      Taekwondo
+    </button>
+    <button class="filter-btn px-6 py-2.5 rounded-full text-sm font-outfit font-semibold uppercase tracking-widest transition-all duration-300 bg-transparent text-gray-400 border border-white/10 hover:border-white/30 hover:text-white" data-filter="Hapkido">
+      Hapkido
+    </button>
+  </div>
+
+  <!-- Vista Desktop (Tabla Glassmorphism) -->
+  <div class="hidden lg:block glass-card rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative">
+    <!-- Glow -->
+    <div class="absolute -top-32 -right-32 w-[300px] h-[300px] bg-energy/10 rounded-full blur-[80px] pointer-events-none"></div>
+
+    <table class="w-full text-left border-collapse relative z-10">
+      <thead>
+        <tr class="bg-zinc-950/60 border-b border-white/10 text-xs uppercase tracking-widest text-gray-400">
+          <th class="py-5 px-8 font-outfit font-semibold">Día</th>
+          <th class="py-5 px-8 font-outfit font-semibold">Horario</th>
+          <th class="py-5 px-8 font-outfit font-semibold">Disciplina</th>
+          <th class="py-5 px-8 font-outfit font-semibold">Nivel</th>
+          <th class="py-5 px-8 font-outfit font-semibold">Instructor</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-white/5" id="schedule-tbody">
+        {scheduleData.map((session) => (
+          <tr class="schedule-row hover:bg-white/[0.02] transition-colors duration-200" data-discipline={session.discipline}>
+            <td class="py-4 px-8 font-medium text-white">{session.day}</td>
+            <td class="py-4 px-8 text-accent font-mono text-sm tracking-wider">{session.time}</td>
+            <td class="py-4 px-8">
+              <span class={`inline-flex px-3 py-1 text-xs font-semibold rounded-full border ${
+                session.discipline === 'Taekwondo' 
+                  ? 'bg-red-500/10 text-red-400 border-red-500/20' 
+                  : session.discipline === 'Hapkido' 
+                    ? 'bg-blue-500/10 text-blue-400 border-blue-500/20' 
+                    : 'bg-zinc-500/10 text-gray-300 border-zinc-500/20'
+              }`}>
+                {session.discipline}
+              </span>
+            </td>
+            <td class="py-4 px-8 text-gray-400 text-sm font-light">{session.level}</td>
+            <td class="py-4 px-8 text-gray-400 text-sm font-light flex items-center gap-2">
+              <div class="w-6 h-6 rounded-full bg-zinc-800 flex items-center justify-center text-[10px] text-white/50 border border-white/10">
+                {session.instructor.charAt(0)}
+              </div>
+              {session.instructor}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    
+    <!-- Empty State Desktop -->
+    <div id="empty-state-desktop" class="hidden py-16 text-center text-gray-500 font-light">
+      No hay clases programadas para este filtro.
+    </div>
+  </div>
+
+  <!-- Vista Mobile (Tarjetas Glassmorphism) -->
+  <div class="lg:hidden space-y-8" id="schedule-mobile">
+    {days.map((day) => (
+      <div class="day-group">
+        <h3 class="font-outfit text-xl font-bold text-white mb-4 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-accent"></span>
+          {day}
+        </h3>
+        <div class="space-y-4">
+          {scheduleData.filter(s => s.day === day).map((session) => (
+            <div class="schedule-card glass-card p-5 rounded-2xl border border-white/5" data-discipline={session.discipline}>
+              <div class="flex justify-between items-start mb-4">
+                <span class="text-accent font-mono text-sm font-medium tracking-wider">{session.time}</span>
+                <span class={`inline-flex px-2.5 py-0.5 text-xs font-semibold rounded-full border ${
+                  session.discipline === 'Taekwondo' 
+                    ? 'bg-red-500/10 text-red-400 border-red-500/20' 
+                    : session.discipline === 'Hapkido' 
+                      ? 'bg-blue-500/10 text-blue-400 border-blue-500/20' 
+                      : 'bg-zinc-500/10 text-gray-400 border-zinc-500/20'
+                }`}>
+                  {session.discipline}
+                </span>
+              </div>
+              <p class="text-white font-medium mb-1">{session.level}</p>
+              <p class="text-sm text-gray-400 font-light flex items-center gap-2">
+                <svg class="h-4 w-4 text-white/20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                {session.instructor}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+
+    <!-- Empty State Mobile -->
+    <div id="empty-state-mobile" class="hidden glass-card p-8 rounded-2xl text-center text-gray-500 border border-white/5">
+      No hay clases programadas para este filtro.
+    </div>
+  </div>
+</div>
+
+<script>
+  const setupFilters = () => {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const tableRows = document.querySelectorAll('.schedule-row');
+    const mobileCards = document.querySelectorAll('.schedule-card');
+    const dayGroups = document.querySelectorAll('.day-group');
+    const emptyStateDesktop = document.getElementById('empty-state-desktop');
+    const emptyStateMobile = document.getElementById('empty-state-mobile');
+    const tableBody = document.getElementById('schedule-tbody');
+
+    filterBtns.forEach(btn => {
+      const newBtn = btn.cloneNode(true);
+      btn.parentNode?.replaceChild(newBtn, btn);
+      
+      newBtn.addEventListener('click', (e) => {
+        const target = e.target as HTMLButtonElement;
+        const filterValue = target.getAttribute('data-filter');
+
+        // Update active classes
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.className = 'filter-btn px-6 py-2.5 rounded-full text-sm font-outfit font-semibold uppercase tracking-widest transition-all duration-300 bg-transparent text-gray-400 border border-white/10 hover:border-white/30 hover:text-white';
+        });
+        target.className = 'filter-btn active px-6 py-2.5 rounded-full text-sm font-outfit font-semibold uppercase tracking-widest transition-all duration-300 bg-white text-zinc-950 shadow-[0_0_15px_rgba(255,255,255,0.3)] border border-transparent';
+
+        let visibleCountDesktop = 0;
+        let visibleCountMobile = 0;
+
+        // Filter Desktop Table
+        tableRows.forEach(row => {
+          const rowDiscipline = row.getAttribute('data-discipline');
+          if (filterValue === 'all' || filterValue === rowDiscipline || rowDiscipline === 'Ambos') {
+            (row as HTMLElement).style.display = '';
+            visibleCountDesktop++;
+          } else {
+            (row as HTMLElement).style.display = 'none';
+          }
+        });
+
+        // Filter Mobile Cards
+        mobileCards.forEach(card => {
+          const cardDiscipline = card.getAttribute('data-discipline');
+          if (filterValue === 'all' || filterValue === cardDiscipline || cardDiscipline === 'Ambos') {
+            (card as HTMLElement).style.display = 'block';
+            visibleCountMobile++;
+          } else {
+            (card as HTMLElement).style.display = 'none';
+          }
+        });
+
+        // Hide empty day groups in mobile
+        dayGroups.forEach(group => {
+          const visibleCardsInGroup = Array.from(group.querySelectorAll('.schedule-card')).filter(card => (card as HTMLElement).style.display !== 'none');
+          if (visibleCardsInGroup.length === 0) {
+            (group as HTMLElement).style.display = 'none';
+          } else {
+            (group as HTMLElement).style.display = 'block';
+          }
+        });
+
+        // Toggle empty states
+        if(tableBody) {
+          if (visibleCountDesktop === 0) {
+             tableBody.style.display = 'none';
+             if(emptyStateDesktop) emptyStateDesktop.classList.remove('hidden');
+          } else {
+             tableBody.style.display = 'table-row-group';
+             if(emptyStateDesktop) emptyStateDesktop.classList.add('hidden');
+          }
+        }
+
+        if (visibleCountMobile === 0) {
+           if(emptyStateMobile) emptyStateMobile.classList.remove('hidden');
+        } else {
+           if(emptyStateMobile) emptyStateMobile.classList.add('hidden');
+        }
+      });
+    });
+  };
+
+  setupFilters();
+  document.addEventListener('astro:page-load', setupFilters);
+</script>

@@ -1,0 +1,84 @@
+---
+interface Props {
+  headline: string;
+  subheadline: string;
+  primaryCtaText: string;
+  primaryCtaLink: string;
+  secondaryCtaText?: string;
+  secondaryCtaLink?: string;
+  bgImageUrl: string;
+}
+
+const { headline, subheadline, primaryCtaText, primaryCtaLink, secondaryCtaText, secondaryCtaLink, bgImageUrl } = Astro.props;
+---
+
+<section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-primary">
+  <!-- Background Image & Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img 
+      src={bgImageUrl} 
+      alt="Artes Marciales Entrenamiento" 
+      class="w-full h-full object-cover object-center mix-blend-luminosity opacity-40"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent mix-blend-multiply"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-zinc-950 via-transparent to-zinc-950"></div>
+    
+    <!-- Glow Effects -->
+    <div class="absolute top-1/4 -left-64 w-[500px] h-[500px] bg-energy/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
+    <div class="absolute bottom-1/4 -right-64 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[100px] mix-blend-screen pointer-events-none"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center text-center">
+    <div class="max-w-4xl animate-fade-in-up">
+      <div class="inline-flex items-center gap-2 py-1 px-4 rounded-full border border-white/10 glass-card text-gray-300 text-xs sm:text-sm mb-8 uppercase tracking-[0.2em] font-medium shadow-2xl">
+        <span class="w-1.5 h-1.5 rounded-full bg-energy shadow-[0_0_8px_#dc2626]"></span>
+        Disciplina • Fuerza • Respeto
+      </div>
+      
+      <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-outfit font-bold text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/40 leading-[0.9] mb-8 pb-2">
+        {headline}
+      </h1>
+      
+      <p class="text-lg md:text-xl lg:text-2xl text-gray-400 mb-12 font-inter font-light text-balance leading-relaxed max-w-2xl mx-auto">
+        {subheadline}
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+        <a 
+          href={primaryCtaLink} 
+          class="group relative inline-flex justify-center items-center px-10 py-5 text-sm md:text-base font-outfit font-bold uppercase tracking-widest text-white bg-energy rounded-full transition-all duration-500 hover:scale-105 overflow-hidden glow-red"
+        >
+          <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></span>
+          <span class="relative z-10 flex items-center">
+            {primaryCtaText}
+            <svg class="ml-3 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </span>
+        </a>
+        
+        {secondaryCtaText && secondaryCtaLink && (
+          <a 
+            href={secondaryCtaLink} 
+            class="group inline-flex justify-center items-center px-10 py-5 text-sm md:text-base font-outfit font-bold uppercase tracking-widest text-white bg-transparent border border-white/20 hover:border-white/60 hover:bg-white/5 backdrop-blur-sm rounded-full transition-all duration-300"
+          >
+            {secondaryCtaText}
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in-up {
+    0% { opacity: 0; transform: translateY(40px); filter: blur(10px); }
+    100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes shimmer {
+    100% { transform: translateX(100%); }
+  }
+</style>

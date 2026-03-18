@@ -1,0 +1,126 @@
+---
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  faqs?: FAQ[];
+}
+
+const defaultFaqs: FAQ[] = [
+  {
+    question: "¿Es necesario tener experiencia previa?",
+    answer: "No, nuestras clases están diseñadas para recibir a estudiantes de todos los niveles. Desde completos principiantes hasta artistas marciales avanzados. Comenzarás a tu propio ritmo."
+  },
+  {
+    question: "¿A qué edad pueden empezar los niños?",
+    answer: "Aceptamos niños a partir de los 4 años en nuestros programas infantiles de Taekwondo, donde nos enfocamos en el desarrollo psicomotriz, disciplina y seguir instrucciones jugando."
+  },
+  {
+    question: "¿Cuál es la diferencia entre Taekwondo y Hapkido?",
+    answer: "El Taekwondo se centra principalmente en técnicas de pateo espectaculares, agilidad y deporte competitivo. El Hapkido es un sistema integral de defensa personal que incluye proyecciones, llaves, ataques a puntos de presión y uso de armas tradicionales. Ambos se complementan perfectamente."
+  },
+  {
+    question: "¿Tengo que comprar equipo inmediatamente?",
+    answer: "No, para tu clase de prueba solo necesitas ropa deportiva cómoda. Una vez que decidas inscribirte de forma regular, te asesoraremos sobre la adquisición de tu uniforme oficial (Dobok) y equipo de protección cuando sea necesario."
+  },
+  {
+    question: "¿Cuántas veces por semana recomiendan entrenar?",
+    answer: "Recomendamos un mínimo de 2 a 3 veces por semana para desarrollar memoria muscular, mejorar la condición física y retener las técnicas de forma óptima y constante."
+  }
+];
+
+const { faqs = defaultFaqs } = Astro.props;
+---
+
+<div class="w-full max-w-4xl mx-auto space-y-4">
+  {faqs.map((faq, index) => (
+    <div class="faq-item glass-card rounded-2xl overflow-hidden transition-all duration-300 border border-white/5 hover:border-white/20">
+      <button 
+        class="faq-button w-full px-6 py-5 md:px-8 text-left flex justify-between items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        aria-expanded="false"
+        aria-controls={`faq-answer-${index}`}
+        id={`faq-button-${index}`}
+      >
+        <span class="font-outfit font-semibold text-lg text-white tracking-wide pr-8">{faq.question}</span>
+        <span class="flex-shrink-0 transition-transform duration-500 ease-spring mr-2">
+          <svg class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+          </svg>
+        </span>
+      </button>
+      
+      <div 
+        id={`faq-answer-${index}`}
+        class="faq-answer grid transition-all duration-500 ease-in-out px-6 md:px-8 bg-black/20"
+        style="grid-template-rows: 0fr;"
+      >
+        <div class="overflow-hidden">
+          <p class="pb-6 pt-2 text-gray-400 font-light text-sm leading-relaxed">
+            {faq.answer}
+          </p>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
+<script>
+  const setupFAQ = () => {
+    const faqButtons = document.querySelectorAll('.faq-button');
+    
+    faqButtons.forEach(button => {
+      // Remover event listeners anteriores si los hubiera
+      const newButton = button.cloneNode(true) as HTMLButtonElement;
+      button.parentNode?.replaceChild(newButton, button);
+      
+      newButton.addEventListener('click', () => {
+        const isExpanded = newButton.getAttribute('aria-expanded') === 'true';
+        const answer = newButton.nextElementSibling as HTMLElement;
+        const icon = newButton.querySelector('svg path') as SVGElement;
+        const iconContainer = newButton.querySelector('span:last-child') as HTMLElement;
+        const parentCard = newButton.parentElement;
+        
+        // Cerrar todos los demás
+        document.querySelectorAll('.faq-button').forEach(otherButton => {
+          if (otherButton !== newButton && otherButton.getAttribute('aria-expanded') === 'true') {
+            otherButton.setAttribute('aria-expanded', 'false');
+            const otherAnswer = otherButton.nextElementSibling as HTMLElement;
+            if (otherAnswer) otherAnswer.style.gridTemplateRows = '0fr';
+            const otherIcon = otherButton.querySelector('svg path') as SVGElement;
+            if (otherIcon) otherIcon.setAttribute('d', 'M12 4v16m8-8H4'); // Plus icon
+            const otherIconContainer = otherButton.querySelector('span:last-child') as HTMLElement;
+            if(otherIconContainer) otherIconContainer.style.transform = 'rotate(0deg)';
+            const otherParent = otherButton.parentElement;
+            if(otherParent) otherParent.classList.remove('border-accent/40', 'shadow-[0_0_20px_rgba(212,160,52,0.1)]');
+          }
+        });
+        
+        // Togglear el actual
+        newButton.setAttribute('aria-expanded', (!isExpanded).toString());
+        
+        if (!isExpanded) {
+          if (answer) answer.style.gridTemplateRows = '1fr';
+          if (icon) icon.setAttribute('d', 'M20 12H4'); // Minus icon
+          if (iconContainer) iconContainer.style.transform = 'rotate(180deg)';
+          if (parentCard) parentCard.classList.add('border-accent/40', 'shadow-[0_0_20px_rgba(212,160,52,0.1)]');
+        } else {
+          if (answer) answer.style.gridTemplateRows = '0fr';
+          if (icon) icon.setAttribute('d', 'M12 4v16m8-8H4'); // Plus icon
+          if (iconContainer) iconContainer.style.transform = 'rotate(0deg)';
+          if (parentCard) parentCard.classList.remove('border-accent/40', 'shadow-[0_0_20px_rgba(212,160,52,0.1)]');
+        }
+      });
+    });
+  };
+
+  setupFAQ();
+  document.addEventListener('astro:page-load', setupFAQ);
+</script>
+
+<style>
+  .ease-spring {
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+</style>

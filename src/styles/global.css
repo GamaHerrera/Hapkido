@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Premium Dark Theme */
+    --color-primary: 9 9 11; /* #09090b - Zinc 950 */
+    --color-accent: 212 160 52; /* #D4A034 - Gold */
+    --color-energy: 220 38 38; /* #dc2626 - Red 600 */
+    --color-bg-light: 24 24 27; /* #18181b - Zinc 900 */
+    --color-surface: 39 39 42; /* #27272a - Zinc 800 */
+  }
+
+  html {
+    @apply scroll-smooth text-gray-300 bg-zinc-950;
+    color-scheme: dark;
+  }
+
+  body {
+    @apply antialiased flex flex-col min-h-screen font-inter bg-zinc-950 text-gray-300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-outfit tracking-tight text-white;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .glass-card {
+    @apply bg-zinc-900/40 backdrop-blur-md border border-white/5;
+  }
+  .glow-red {
+    @apply shadow-[0_0_30px_rgba(220,38,38,0.3)];
+  }
+  .glow-gold {
+    @apply shadow-[0_0_30px_rgba(212,160,52,0.3)];
+  }
+}

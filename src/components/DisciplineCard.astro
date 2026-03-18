@@ -1,0 +1,61 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  features: string[];
+  image: string;
+  link: string;
+  linkText?: string;
+  theme?: 'dark' | 'light'; // Kept logic, but both use sleek variants
+}
+
+const { 
+  title, 
+  description, 
+  features, 
+  image, 
+  link, 
+  linkText = "Descubre más"
+} = Astro.props;
+---
+
+<div class="group relative flex flex-col rounded-3xl overflow-hidden glass-card transition-all duration-700 transform hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.8)] border border-white/5 hover:border-white/20">
+  
+  <div class="relative h-72 sm:h-80 overflow-hidden shrink-0">
+    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent z-10 w-full h-full"></div>
+    <img 
+      src={image} 
+      alt={`Clase de ${title}`} 
+      class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0"
+      loading="lazy"
+    />
+    <div class="absolute bottom-6 left-8 w-full z-20">
+      <h3 class="font-outfit font-bold text-4xl text-white tracking-wide">{title}</h3>
+    </div>
+  </div>
+  
+  <div class="p-8 pb-10 flex-grow flex flex-col relative z-20 bg-zinc-950/40 backdrop-blur-md">
+    <p class="text-gray-400 mb-8 leading-relaxed font-light text-sm">
+      {description}
+    </p>
+    
+    <ul class="space-y-4 mb-10 flex-grow">
+      {features.map((feature) => (
+        <li class="flex items-start">
+          <svg class="h-5 w-5 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7" />
+          </svg>
+          <span class="text-gray-300 font-light text-sm">{feature}</span>
+        </li>
+      ))}
+    </ul>
+    
+    <a 
+      href={link} 
+      class="inline-flex w-full items-center justify-center py-4 bg-white/5 border border-white/10 text-white font-outfit font-semibold uppercase tracking-widest text-sm rounded-xl hover:bg-white hover:text-zinc-950 transition-all duration-300"
+    >
+      {linkText}
+      <svg class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+    </a>
+  </div>
+</div>

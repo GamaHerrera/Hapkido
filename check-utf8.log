@@ -1,0 +1,98 @@
+﻿15:58:29 [types] Generated 73ms
+15:58:29 [check] Getting diagnostics for Astro files in C:\Users\Gama-\OneDrive\Documentos\GitHub\Hapkido...
+[96msrc/components/ContactForm.astro[0m:[93m64[0m:[93m78[0m - [93mwarning[0m[90m ts(6385): [0m'event' is deprecated.
+
+[7m64[0m       <form id={formId} class="space-y-6" action="#" method="POST" onsubmit="event.preventDefault(); alert('Modo Demo: Formulario enviado. ┬íGracias!');">
+[7m  [0m [93m                                                                             ~~~~~[0m
+
+[96msrc/components/FAQAccordion.astro[0m:[93m101[0m:[93m19[0m - [91merror[0m[90m ts(2339): [0mProperty 'setAttribute' does not exist on type 'Node'.
+
+[7m101[0m         newButton.setAttribute('aria-expanded', (!isExpanded).toString());
+[7m   [0m [91m                  ~~~~~~~~~~~~[0m
+[96msrc/components/FAQAccordion.astro[0m:[93m82[0m:[93m41[0m - [91merror[0m[90m ts(2339): [0mProperty 'querySelector' does not exist on type 'Node'.
+
+[7m82[0m         const iconContainer = newButton.querySelector('span:last-child') as HTMLElement;
+[7m  [0m [91m                                        ~~~~~~~~~~~~~[0m
+[96msrc/components/FAQAccordion.astro[0m:[93m81[0m:[93m32[0m - [91merror[0m[90m ts(2339): [0mProperty 'querySelector' does not exist on type 'Node'.
+
+[7m81[0m         const icon = newButton.querySelector('svg path') as SVGPathElement;
+[7m  [0m [91m                               ~~~~~~~~~~~~~[0m
+[96msrc/components/FAQAccordion.astro[0m:[93m80[0m:[93m34[0m - [91merror[0m[90m ts(2339): [0mProperty 'nextElementSibling' does not exist on type 'Node'.
+
+[7m80[0m         const answer = newButton.nextElementSibling as HTMLElement;
+[7m  [0m [91m                                 ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/FAQAccordion.astro[0m:[93m79[0m:[93m38[0m - [91merror[0m[90m ts(2339): [0mProperty 'getAttribute' does not exist on type 'Node'.
+
+[7m79[0m         const isExpanded = newButton.getAttribute('aria-expanded') === 'true';
+[7m  [0m [91m                                     ~~~~~~~~~~~~[0m
+
+[96msrc/components/TestimonialSlider.astro[0m:[93m2[0m:[93m11[0m - [93mwarning[0m[90m ts(6196): [0m'Testimonial' is declared but never used.
+
+[7m2[0m interface Testimonial {
+[7m [0m [93m          ~~~~~~~~~~~[0m
+[96msrc/components/TestimonialSlider.astro[0m:[93m10[0m:[93m1[0m - [91merror[0m[90m ts(1131): [0mProperty or signature expected.
+
+[7m10[0m const testimonials = [
+[7m  [0m [91m~~~~~[0m
+[96msrc/components/TestimonialSlider.astro[0m:[93m178[0m:[93m48[0m - [91merror[0m[90m ts(2304): [0mCannot find name 'initTestimonials'.
+
+[7m178[0m   document.addEventListener('astro:page-load', initTestimonials);
+[7m   [0m [91m                                               ~~~~~~~~~~~~~~~~[0m
+[96msrc/components/TestimonialSlider.astro[0m:[93m177[0m:[93m3[0m - [91merror[0m[90m ts(2304): [0mCannot find name 'initTestimonials'.
+
+[7m177[0m   initTestimonials();
+[7m   [0m [91m  ~~~~~~~~~~~~~~~~[0m
+[96msrc/components/TestimonialSlider.astro[0m:[93m163[0m:[93m9[0m - [91merror[0m[90m ts(2304): [0mCannot find name 'goToSlide'.
+
+[7m163[0m         goToSlide(index);
+[7m   [0m [91m        ~~~~~~~~~[0m
+[96msrc/components/TestimonialSlider.astro[0m:[93m155[0m:[93m23[0m - [91merror[0m[90m ts(2304): [0mCannot find name 'autoSlideInterval'.
+
+[7m155[0m         clearInterval(autoSlideInterval);
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/TestimonialSlider.astro[0m:[93m154[0m:[93m11[0m - [91merror[0m[90m ts(2304): [0mCannot find name 'autoSlideInterval'.
+
+[7m154[0m       if (autoSlideInterval) {
+[7m   [0m [91m          ~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/TestimonialSlider.astro[0m:[93m150[0m:[93m7[0m - [91merror[0m[90m ts(2304): [0mCannot find name 'autoSlideInterval'.
+
+[7m150[0m       autoSlideInterval = setInterval(nextSlide, 5000) as unknown as number;
+[7m   [0m [91m      ~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/TestimonialSlider.astro[0m:[93m145[0m:[93m17[0m - [91merror[0m[90m ts(2552): [0mCannot find name 'currentIndex'. Did you mean 'currentSlide'?
+
+[7m145[0m       goToSlide(currentIndex);
+[7m   [0m [91m                ~~~~~~~~~~~~[0m
+[96msrc/components/TestimonialSlider.astro[0m:[93m145[0m:[93m7[0m - [91merror[0m[90m ts(2304): [0mCannot find name 'goToSlide'.
+
+[7m145[0m       goToSlide(currentIndex);
+[7m   [0m [91m      ~~~~~~~~~[0m
+[96msrc/components/TestimonialSlider.astro[0m:[93m144[0m:[93m43[0m - [91merror[0m[90m ts(2304): [0mCannot find name 'totalSlides'.
+
+[7m144[0m       currentIndex = (currentIndex + 1) % totalSlides;
+[7m   [0m [91m                                          ~~~~~~~~~~~[0m
+[96msrc/components/TestimonialSlider.astro[0m:[93m144[0m:[93m23[0m - [91merror[0m[90m ts(2552): [0mCannot find name 'currentIndex'. Did you mean 'currentSlide'?
+
+[7m144[0m       currentIndex = (currentIndex + 1) % totalSlides;
+[7m   [0m [91m                      ~~~~~~~~~~~~[0m
+[96msrc/components/TestimonialSlider.astro[0m:[93m144[0m:[93m7[0m - [91merror[0m[90m ts(2552): [0mCannot find name 'currentIndex'. Did you mean 'currentSlide'?
+
+[7m144[0m       currentIndex = (currentIndex + 1) % totalSlides;
+[7m   [0m [91m      ~~~~~~~~~~~~[0m
+[96msrc/components/TestimonialSlider.astro[0m:[93m126[0m:[93m11[0m - [93mwarning[0m[90m ts(6133): [0m'updateSlider' is declared but its value is never read.
+
+[7m126[0m     const updateSlider = (index: number) => {
+[7m   [0m [93m          ~~~~~~~~~~~~[0m
+[96msrc/components/TestimonialSlider.astro[0m:[93m117[0m:[93m9[0m - [93mwarning[0m[90m ts(6133): [0m'setupTestimonialSlider' is declared but its value is never read.
+
+[7m117[0m   const setupTestimonialSlider = () => {
+[7m   [0m [93m        ~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/TestimonialSlider.astro[0m:[93m115[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'autoPlayInterval' is declared but its value is never read.
+
+[7m115[0m   let autoPlayInterval: number;
+[7m   [0m [93m      ~~~~~~~~~~~~~~~~[0m
+
+Result (20 files): 
+- 17 errors
+- 0 warnings
+- 5 hints
+
