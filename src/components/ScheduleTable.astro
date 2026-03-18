@@ -37,7 +37,7 @@ const days = ['Lunes', 'Miércoles', 'Viernes', 'Sábado'];
   
   <!-- Filtros -->
   <div class="flex flex-wrap justify-center gap-3 mb-10">
-    <button class="filter-btn active px-6 py-2.5 rounded-full text-sm font-outfit font-semibold uppercase tracking-widest transition-all duration-300 bg-white text-zinc-950 shadow-[0_0_15px_rgba(255,255,255,0.3)] border border-transparent" data-filter="all">
+    <button class="filter-btn active px-6 py-2.5 rounded-full text-sm font-outfit font-semibold uppercase tracking-widest transition-all duration-300 bg-white text-primary shadow-[0_0_15px_rgba(255,255,255,0.3)] border border-transparent" data-filter="all">
       Todos
     </button>
     <button class="filter-btn px-6 py-2.5 rounded-full text-sm font-outfit font-semibold uppercase tracking-widest transition-all duration-300 bg-transparent text-gray-400 border border-white/10 hover:border-white/30 hover:text-white" data-filter="Taekwondo">
@@ -55,7 +55,7 @@ const days = ['Lunes', 'Miércoles', 'Viernes', 'Sábado'];
 
     <table class="w-full text-left border-collapse relative z-10">
       <thead>
-        <tr class="bg-zinc-950/60 border-b border-white/10 text-xs uppercase tracking-widest text-gray-400">
+        <tr class="bg-primary/60 border-b border-white/10 text-xs uppercase tracking-widest text-gray-400">
           <th class="py-5 px-8 font-outfit font-semibold">Día</th>
           <th class="py-5 px-8 font-outfit font-semibold">Horario</th>
           <th class="py-5 px-8 font-outfit font-semibold">Disciplina</th>
@@ -162,7 +162,7 @@ const days = ['Lunes', 'Miércoles', 'Viernes', 'Sábado'];
         document.querySelectorAll('.filter-btn').forEach(b => {
           b.className = 'filter-btn px-6 py-2.5 rounded-full text-sm font-outfit font-semibold uppercase tracking-widest transition-all duration-300 bg-transparent text-gray-400 border border-white/10 hover:border-white/30 hover:text-white';
         });
-        target.className = 'filter-btn active px-6 py-2.5 rounded-full text-sm font-outfit font-semibold uppercase tracking-widest transition-all duration-300 bg-white text-zinc-950 shadow-[0_0_15px_rgba(255,255,255,0.3)] border border-transparent';
+        target.className = 'filter-btn active px-6 py-2.5 rounded-full text-sm font-outfit font-semibold uppercase tracking-widest transition-all duration-300 bg-white text-primary shadow-[0_0_15px_rgba(255,255,255,0.3)] border border-transparent';
 
         let visibleCountDesktop = 0;
         let visibleCountMobile = 0;

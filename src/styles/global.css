@@ -5,20 +5,20 @@
 @layer base {
   :root {
     /* Premium Dark Theme */
-    --color-primary: 9 9 11; /* #09090b - Zinc 950 */
-    --color-accent: 212 160 52; /* #D4A034 - Gold */
-    --color-energy: 220 38 38; /* #dc2626 - Red 600 */
-    --color-bg-light: 24 24 27; /* #18181b - Zinc 900 */
-    --color-surface: 39 39 42; /* #27272a - Zinc 800 */
+    --color-primary: 24 32 52; /* #182034 - Navy */
+    --color-accent: 17 65 129; /* #114181 - Blue */
+    --color-energy: 208 17 39; /* #D01127 - Red */
+    --color-bg-light: 36 48 78; /* lighter navy for cards */
+    --color-surface: 48 64 104; /* even lighter */
   }
 
   html {
-    @apply scroll-smooth text-gray-300 bg-zinc-950;
+    @apply scroll-smooth text-gray-300 bg-primary;
     color-scheme: dark;
   }
 
   body {
-    @apply antialiased flex flex-col min-h-screen font-inter bg-zinc-950 text-gray-300;
+    @apply antialiased flex flex-col min-h-screen font-inter bg-primary text-gray-300;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -31,12 +31,12 @@
     text-wrap: balance;
   }
   .glass-card {
-    @apply bg-zinc-900/40 backdrop-blur-md border border-white/5;
+    @apply bg-[#0f1422]/40 backdrop-blur-md border border-white/5;
   }
   .glow-red {
-    @apply shadow-[0_0_30px_rgba(220,38,38,0.3)];
+    @apply shadow-[0_0_30px_rgba(208,17,39,0.3)];
   }
   .glow-gold {
-    @apply shadow-[0_0_30px_rgba(212,160,52,0.3)];
+    @apply shadow-[0_0_30px_rgba(17,65,129,0.3)];
   }
 }
