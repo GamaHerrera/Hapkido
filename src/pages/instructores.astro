@@ -35,12 +35,12 @@ const instructors = [
 <Layout title="Nuestros Instructores | CWH Jaguares">
 	<Navbar />
 	
-	<main class="bg-primary pt-24 pb-20">
+	<main class="relative bg-transparent pt-24 pb-20">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       
       <div class="text-center mb-20 relative">
-        <h1 class="text-4xl md:text-6xl font-outfit font-bold text-white mb-6">Mestros de Élite</h1>
-        <p class="text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+        <h1 class="text-4xl md:text-6xl font-outfit font-bold text-primary mb-6">Mestros de Élite</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
           Nuestra filosofía dicta que el nivel de los alumnos nunca superará el estándar exigido por su maestro. Conoce al equipo de élite encargado de tu formación profesional.
         </p>
       </div>
@@ -53,14 +53,14 @@ const instructors = [
               <!-- Glow behind image -->
               <div class="absolute inset-0 bg-accent/20 rounded-3xl blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               
-              <div class="relative overflow-hidden rounded-3xl shadow-[0_20px_40px_-10px_rgba(0,0,0,0.8)] border border-white/5 grayscale group-hover:grayscale-0 transition-all duration-700 aspect-[4/5] sm:aspect-auto sm:h-[600px] w-full">
+              <div class="relative overflow-hidden rounded-3xl shadow-[0_20px_40px_-10px_rgba(0,0,0,0.15)] border border-gray-200 grayscale group-hover:grayscale-0 transition-all duration-700 aspect-[4/5] sm:aspect-auto sm:h-[600px] w-full">
                 <img 
                   src={instructor.image} 
                   alt={`Instructor ${instructor.name}`} 
                   class="w-full h-full object-cover object-top scale-100 group-hover:scale-105 transition-transform duration-1000"
                 />
                 
-                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary via-primary/80 to-transparent p-8 md:p-12">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent p-8 md:p-12">
                   <div class="inline-block bg-accent px-4 py-1.5 rounded-full text-primary text-xs font-bold tracking-widest uppercase mb-3">
                     {instructor.dan}
                   </div>
@@ -70,20 +70,20 @@ const instructors = [
 
             <div class="w-full lg:w-1/2">
               <span class="text-accent font-mono text-sm uppercase tracking-wider mb-2 block">{instructor.role}</span>
-              <h2 class="text-4xl md:text-5xl font-outfit font-bold text-white mb-6">{instructor.name}</h2>
+              <h2 class="text-4xl md:text-5xl font-outfit font-bold text-primary mb-6">{instructor.name}</h2>
               
-              <p class="text-gray-400 font-light text-lg leading-relaxed mb-10 text-balance">
+              <p class="text-gray-600 font-light text-lg leading-relaxed mb-10 text-balance">
                 {instructor.description}
               </p>
 
               <div>
-                <h4 class="font-outfit font-bold text-xl text-white mb-4 flex items-center gap-3">
+                <h4 class="font-outfit font-bold text-xl text-primary mb-4 flex items-center gap-3">
                   <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
                   Credenciales & Grados
                 </h4>
                 <ul class="space-y-3">
                   {instructor.certifications.map(cert => (
-                    <li class="flex items-center text-gray-400 font-light text-sm bg-white/5 py-2 px-4 rounded-lg border border-white/5 w-max">
+                    <li class="flex items-center text-gray-700 font-light text-sm bg-gray-100 py-2 px-4 rounded-lg border border-gray-200 w-max">
                       {cert}
                     </li>
                   ))}

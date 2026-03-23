@@ -31,18 +31,18 @@ const testimonials = [
 ];
 ---
 
-<section class="py-24 bg-primary relative overflow-hidden">
+<section class="py-24 bg-transparent relative overflow-hidden">
   <!-- Decorative Glow -->
-  <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
-    <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-accent/30 rounded-full blur-[120px] mix-blend-screen"></div>
-    <div class="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-energy/20 rounded-full blur-[120px] mix-blend-screen"></div>
+  <div class="absolute inset-0 z-0 opacity-40 pointer-events-none">
+    <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[120px] mix-blend-multiply"></div>
+    <div class="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-energy/10 rounded-full blur-[120px] mix-blend-multiply"></div>
   </div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="text-center mb-16">
       <span class="text-accent font-semibold tracking-widest uppercase text-sm mb-4 inline-block">Nuestra Comunidad</span>
-      <h2 class="text-4xl md:text-5xl font-outfit font-bold text-white mb-6">Testimonios Reales</h2>
-      <p class="text-lg text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+      <h2 class="text-4xl md:text-5xl font-outfit font-bold text-primary mb-6">Testimonios Reales</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
         Descubre cómo el entrenamiento ha transformado la vida de nuestros alumnos, construyendo fuerza, confianza y disciplina.
       </p>
     </div>
@@ -54,9 +54,9 @@ const testimonials = [
       >
         {testimonials.map((testimonial) => (
           <div class="w-full shrink-0 px-4 md:px-12 flex justify-center">
-            <div class="glass-card rounded-3xl p-10 md:p-14 max-w-3xl w-full mx-auto relative border border-white/10 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.8)]">
+            <div class="glass-card rounded-3xl p-10 md:p-14 max-w-3xl w-full mx-auto relative border border-gray-100 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.1)]">
               <!-- Quote Icon -->
-              <svg class="absolute top-8 right-10 md:top-12 md:right-14 h-16 w-16 text-white/5" fill="currentColor" viewBox="0 0 24 24">
+              <svg class="absolute top-8 right-10 md:top-12 md:right-14 h-16 w-16 text-primary/5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
 
@@ -70,7 +70,7 @@ const testimonials = [
               </div>
 
               <!-- Quote -->
-              <p class="text-xl md:text-2xl text-gray-300 font-inter font-light italic leading-relaxed mb-10 relative z-10">
+              <p class="text-xl md:text-2xl text-gray-600 font-inter font-light italic leading-relaxed mb-10 relative z-10">
                 "{testimonial.content}"
               </p>
 
@@ -82,7 +82,7 @@ const testimonials = [
                   class="w-14 h-14 rounded-full object-cover border-2 border-accent shadow-lg shadow-accent/20"
                 />
                 <div class="ml-4">
-                  <h4 class="font-outfit font-bold text-white tracking-wide">{testimonial.name}</h4>
+                  <h4 class="font-outfit font-bold text-primary tracking-wide">{testimonial.name}</h4>
                   <p class="text-accent text-sm uppercase tracking-widest mt-1 text-xs">{testimonial.role}</p>
                 </div>
               </div>
@@ -99,7 +99,7 @@ const testimonials = [
       >
         {testimonials.map((_, i) => (
           <button 
-            class={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent ${i === 0 ? 'bg-accent w-6 md:w-10' : 'bg-gray-600 hover:bg-gray-400'}`}
+            class={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent ${i === 0 ? 'bg-accent w-6 md:w-10' : 'bg-gray-300 hover:bg-gray-400'}`}
             aria-label={`Ir al testimonio ${i + 1}`}
             data-index={i}
           ></button>
@@ -134,9 +134,9 @@ const testimonials = [
       // Update dots
       dots.forEach((dot, i) => {
         if (i === currentSlide) {
-          dot.className = 'w-6 md:w-10 h-2 md:h-3 rounded-full transition-all duration-500 bg-[#D4A034] focus:outline-none focus:ring-2 focus:ring-[#D4A034] shadow-[0_0_10px_#D4A034]';
+          dot.className = 'w-6 md:w-10 h-2 md:h-3 rounded-full transition-all duration-500 bg-[#114181] focus:outline-none focus:ring-2 focus:ring-[#114181] shadow-[0_0_10px_rgba(17,65,129,0.3)]';
         } else {
-          dot.className = 'w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 bg-gray-600 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-[#D4A034]';
+          dot.className = 'w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 bg-gray-300 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-[#114181]';
         }
       });
     }

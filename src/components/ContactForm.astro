@@ -6,13 +6,13 @@ interface Props {
 const { formId = "contact-form" } = Astro.props;
 ---
 
-<div class="glass-card rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative max-w-6xl mx-auto">
+<div class="glass-card rounded-3xl overflow-hidden border border-gray-200 shadow-xl relative max-w-6xl mx-auto">
   <!-- Decorative Glow -->
   <div class="absolute -top-32 -right-32 w-[400px] h-[400px] bg-energy/10 rounded-full blur-[100px] pointer-events-none"></div>
 
   <div class="grid grid-cols-1 md:grid-cols-5 relative z-10">
     <!-- Información de Contacto Lado Izquierdo -->
-    <div class="bg-primary/50 backdrop-blur-md p-10 md:p-14 md:col-span-2 text-white flex flex-col justify-between border-b md:border-b-0 md:border-r border-white/5">
+    <div class="bg-primary p-10 md:p-14 md:col-span-2 text-white flex flex-col justify-between border-b md:border-b-0 md:border-r border-primary">
       <div>
         <h3 class="font-outfit font-bold text-3xl mb-4 tracking-wide text-white">Da el primer paso</h3>
         <p class="text-gray-400 font-light mb-12 text-sm leading-relaxed text-balance">
@@ -60,29 +60,29 @@ const { formId = "contact-form" } = Astro.props;
     </div>
 
     <!-- Formulario Lado Derecho -->
-    <div class="bg-[#0f1422]/60 p-10 md:p-14 md:col-span-3">
+    <div class="bg-white p-10 md:p-14 md:col-span-3">
       <form id={formId} class="space-y-6" action="#" method="POST">
         <!-- Grid de 2 columnas para Nombre y Teléfono -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label for="name" class="block text-sm font-medium text-gray-400 mb-2">Nombre Completo</label>
-            <input type="text" name="name" id="name" required class="w-full bg-primary border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="Escribe tu nombre">
+            <label for="name" class="block text-sm font-medium text-gray-600 mb-2">Nombre Completo</label>
+            <input type="text" name="name" id="name" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="Escribe tu nombre">
           </div>
           <div>
-            <label for="phone" class="block text-sm font-medium text-gray-400 mb-2">Teléfono / WhatsApp</label>
-            <input type="tel" name="phone" id="phone" required class="w-full bg-primary border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="(000) 000 0000">
+            <label for="phone" class="block text-sm font-medium text-gray-600 mb-2">Teléfono / WhatsApp</label>
+            <input type="tel" name="phone" id="phone" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="(000) 000 0000">
           </div>
         </div>
 
         <div>
-           <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Correo Electrónico (Opcional)</label>
-           <input type="email" name="email" id="email" class="w-full bg-primary border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="tu@correo.com">
+           <label for="email" class="block text-sm font-medium text-gray-600 mb-2">Correo Electrónico (Opcional)</label>
+           <input type="email" name="email" id="email" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="tu@correo.com">
         </div>
 
         <div>
-          <label for="interest" class="block text-sm font-medium text-gray-400 mb-2">Área de Interés</label>
+          <label for="interest" class="block text-sm font-medium text-gray-600 mb-2">Área de Interés</label>
           <div class="relative">
-            <select id="interest" name="interest" class="w-full bg-primary border border-white/10 rounded-xl px-4 py-3 text-white appearance-none focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all">
+            <select id="interest" name="interest" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 appearance-none focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all">
               <option value="tkd-infantil">Taekwondo Infantil</option>
               <option value="tkd-adultos">Taekwondo Adultos</option>
               <option value="hkd-adultos">Hapkido (Defensa Personal)</option>
@@ -95,8 +95,8 @@ const { formId = "contact-form" } = Astro.props;
         </div>
 
         <div>
-          <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Mensaje o Duda</label>
-          <textarea id="message" name="message" rows="4" class="w-full bg-primary border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none" placeholder="¿Tienes alguna pregunta específica antes de venir?"></textarea>
+          <label for="message" class="block text-sm font-medium text-gray-600 mb-2">Mensaje o Duda</label>
+          <textarea id="message" name="message" rows="4" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none" placeholder="¿Tienes alguna pregunta específica antes de venir?"></textarea>
         </div>
 
         <div class="pt-4">

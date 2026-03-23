@@ -9,7 +9,7 @@ import HeroSection from '../components/HeroSection.astro';
 <Layout title="Hapkido | CWH Jaguares">
 	<Navbar />
 	
-	<main class="bg-primary">
+	<main class="relative bg-transparent">
 		<HeroSection 
       headline="Hapkido Real"
       subheadline="Defensa personal táctica. Aprende luxaciones, proyecciones y manejo del oponente independientemente de su fuerza bruta."
@@ -24,11 +24,11 @@ import HeroSection from '../components/HeroSection.astro';
       
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div class="glass-card rounded-3xl p-10 md:p-14 border border-white/5 mb-16 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.8)]">
+        <div class="glass-card rounded-3xl p-10 md:p-14 border border-gray-200 mb-16 shadow-xl">
           <span class="text-accent font-semibold tracking-widest uppercase text-sm mb-4 inline-block">El Arte de la Energía Coordinada</span>
-          <h2 class="text-3xl md:text-4xl font-outfit font-bold text-white mb-8">¿Qué es el Hapkido?</h2>
+          <h2 class="text-3xl md:text-4xl font-outfit font-bold text-primary mb-8">¿Qué es el Hapkido?</h2>
           
-          <div class="prose prose-invert prose-lg max-w-none text-gray-400 font-light leading-relaxed">
+          <div class="prose prose-lg max-w-none text-gray-600 font-light leading-relaxed">
             <p class="mb-6">
               El Hapkido es un arte marcial coreano sumamente versátil enfocado puramente en la defensa personal letal y realista. A diferencia del enfoque cien por ciento de pateo del Taekwondo, el Hapkido emplea llaves articulares, estrangulaciones y lanzamientos para manipular la energía del adversario.
             </p>
@@ -39,52 +39,52 @@ import HeroSection from '../components/HeroSection.astro';
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div class="glass-card rounded-3xl p-8 border border-white/5 hover:border-accent/30 transition-colors">
-            <h3 class="font-outfit font-bold text-xl text-white mb-4">Manejo de Distancia</h3>
-            <p class="text-gray-400 font-light text-sm leading-relaxed">
+          <div class="glass-card rounded-3xl p-8 border border-gray-200 bg-white shadow-sm hover:border-accent/30 transition-colors">
+            <h3 class="font-outfit font-bold text-xl text-primary mb-4">Manejo de Distancia</h3>
+            <p class="text-gray-600 font-light text-sm leading-relaxed">
               Aprende golpes y patadas para mantener a raya a los agresores y establecer un perímetro de seguridad intransitable.
             </p>
           </div>
-          <div class="glass-card rounded-3xl p-8 border border-white/5 hover:border-accent/30 transition-colors">
-            <h3 class="font-outfit font-bold text-xl text-white mb-4">Técnicas de Control</h3>
-            <p class="text-gray-400 font-light text-sm leading-relaxed">
+          <div class="glass-card rounded-3xl p-8 border border-gray-200 bg-white shadow-sm hover:border-accent/30 transition-colors">
+            <h3 class="font-outfit font-bold text-xl text-primary mb-4">Técnicas de Control</h3>
+            <p class="text-gray-600 font-light text-sm leading-relaxed">
               Si el atacante cierra la distancia, aplicarás sumisiones, palancas y presiones en puntos vitales (Kupso) para someterlo de inmediato.
             </p>
           </div>
-          <div class="glass-card rounded-3xl p-8 border border-white/5 hover:border-accent/30 transition-colors">
-            <h3 class="font-outfit font-bold text-xl text-white mb-4">Armas Tradicionales</h3>
-            <p class="text-gray-400 font-light text-sm leading-relaxed">
+          <div class="glass-card rounded-3xl p-8 border border-gray-200 bg-white shadow-sm hover:border-accent/30 transition-colors">
+            <h3 class="font-outfit font-bold text-xl text-primary mb-4">Armas Tradicionales</h3>
+            <p class="text-gray-600 font-light text-sm leading-relaxed">
               Entrenamiento superior empleando Danbong (palo corto), Jangbong (bastón largo) y cinta policial para técnicas maestras.
             </p>
           </div>
         </div>
 
         <div class="text-center">
-          <h2 class="text-2xl md:text-3xl font-outfit font-bold text-white mb-8">A quién va dirigido</h2>
-          <p class="text-gray-400 font-light max-w-3xl mx-auto mb-10 leading-relaxed">
+          <h2 class="text-2xl md:text-3xl font-outfit font-bold text-primary mb-8">A quién va dirigido</h2>
+          <p class="text-gray-600 font-light max-w-3xl mx-auto mb-10 leading-relaxed">
             Este arte no requiere atletismo extremo. Al basarse en la biomecánica y el apalancamiento articular, es excepcionalmente efectivo para mujeres buscando defensa personal y adultos que desean protección urbana práctica en situaciones de altísimo riesgo.
           </p>
           
           <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
-             <li class="flex items-center text-gray-300 bg-white/[0.02] p-4 rounded-xl border border-white/5">
+             <li class="flex items-center text-gray-700 bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
               <svg class="h-5 w-5 text-accent mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               Efectivo contra agresores corpulentos
             </li>
-            <li class="flex items-center text-gray-300 bg-white/[0.02] p-4 rounded-xl border border-white/5">
+            <li class="flex items-center text-gray-700 bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
               <svg class="h-5 w-5 text-accent mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               Técnicas de caída táctica y supervivencia
             </li>
-            <li class="flex items-center text-gray-300 bg-white/[0.02] p-4 rounded-xl border border-white/5">
+            <li class="flex items-center text-gray-700 bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
               <svg class="h-5 w-5 text-accent mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               Manejo asertivo de situaciones de crisis
             </li>
-            <li class="flex items-center text-gray-300 bg-white/[0.02] p-4 rounded-xl border border-white/5">
+            <li class="flex items-center text-gray-700 bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
               <svg class="h-5 w-5 text-accent mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -96,7 +96,7 @@ import HeroSection from '../components/HeroSection.astro';
 		</section>
 
     <!-- CTA Banner -->
-    <section class="py-20 relative overflow-hidden bg-primary w-full border-t border-white/10 shadow-[0_-20px_40px_rgba(0,0,0,0.5)]">
+    <section class="py-20 relative overflow-hidden bg-primary w-full border-t border-transparent">
       <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
       
       <div class="max-w-4xl mx-auto px-4 text-center relative z-10">

@@ -13,16 +13,16 @@
   }
 
   html {
-    @apply scroll-smooth text-gray-300 bg-primary;
-    color-scheme: dark;
+    @apply scroll-smooth text-gray-800 bg-gray-50;
+    color-scheme: light;
   }
 
   body {
-    @apply antialiased flex flex-col min-h-screen font-inter bg-primary text-gray-300;
+    @apply antialiased flex flex-col min-h-screen font-inter bg-gray-50 text-gray-800;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-outfit tracking-tight text-white;
+    @apply font-outfit tracking-tight text-primary;
   }
 }
 
@@ -31,7 +31,7 @@
     text-wrap: balance;
   }
   .glass-card {
-    @apply bg-[#0f1422]/40 backdrop-blur-md border border-white/5;
+    @apply bg-white/80 backdrop-blur-md border border-gray-200 shadow-xl;
   }
   .glow-red {
     @apply shadow-[0_0_30px_rgba(208,17,39,0.3)];

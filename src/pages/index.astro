@@ -14,7 +14,7 @@ import WhatsAppButton from '../components/WhatsAppButton.astro';
 <Layout title="CWH Jaguares | Taekwondo & Hapkido Premium">
 	<Navbar />
 	
-	<main class="bg-primary relative">
+	<main class="relative bg-transparent">
 		<!-- Hero Section -->
 		<HeroSection 
       headline="Forjando Carácter"
@@ -31,40 +31,40 @@ import WhatsAppButton from '../components/WhatsAppButton.astro';
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <!-- Card 1 -->
-					<div class="glass-card rounded-3xl p-10 border border-white/5 transition-transform duration-500 hover:-translate-y-2 group">
-            <div class="bg-white/5 inline-flex p-4 rounded-2xl mb-6 shadow-inner border border-white/10 group-hover:bg-accent/10 transition-colors">
-              <svg class="h-8 w-8 text-white group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<div class="glass-card rounded-3xl p-10 border border-gray-200 transition-transform duration-500 hover:-translate-y-2 group bg-white shadow-lg">
+            <div class="bg-gray-100 inline-flex p-4 rounded-2xl mb-6 border border-gray-200 group-hover:bg-accent/10 transition-colors">
+              <svg class="h-8 w-8 text-primary group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
               </svg>
             </div>
-            <h3 class="font-outfit font-bold text-2xl text-white mb-3">Máxima Acreditación</h3>
-            <p class="text-gray-400 font-light text-sm leading-relaxed">
+            <h3 class="font-outfit font-bold text-2xl text-primary mb-3">Máxima Acreditación</h3>
+            <p class="text-gray-600 font-light text-sm leading-relaxed">
               Instructores certificados por Kukkiwon y KHF. Tu educación marcial en manos de profesionales reales.
             </p>
           </div>
           
           <!-- Card 2 -->
-					<div class="glass-card rounded-3xl p-10 border border-white/5 transition-transform duration-500 hover:-translate-y-2 group shadow-[0_0_40px_rgba(212,160,52,0.1)]">
+					<div class="glass-card rounded-3xl p-10 border border-accent/20 transition-transform duration-500 hover:-translate-y-2 group shadow-[0_15px_40px_rgba(17,65,129,0.1)] bg-white">
             <div class="bg-accent/10 inline-flex p-4 rounded-2xl mb-6 shadow-inner border border-accent/20 group-hover:bg-accent/20 transition-colors">
               <svg class="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
               </svg>
             </div>
-            <h3 class="font-outfit font-bold text-2xl text-white mb-3">Ambiente Premium</h3>
-            <p class="text-gray-400 font-light text-sm leading-relaxed">
+            <h3 class="font-outfit font-bold text-2xl text-primary mb-3">Ambiente Premium</h3>
+            <p class="text-gray-600 font-light text-sm leading-relaxed">
               Una comunidad que filtra por valores. Convivencia respetuosa, sin egos, enfocada completamente en tu mejora continua.
             </p>
           </div>
           
           <!-- Card 3 -->
-					<div class="glass-card rounded-3xl p-10 border border-white/5 transition-transform duration-500 hover:-translate-y-2 group">
-            <div class="bg-white/5 inline-flex p-4 rounded-2xl mb-6 shadow-inner border border-white/10 group-hover:bg-energy/10 transition-colors">
-              <svg class="h-8 w-8 text-white group-hover:text-energy transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<div class="glass-card rounded-3xl p-10 border border-gray-200 transition-transform duration-500 hover:-translate-y-2 group bg-white shadow-lg">
+            <div class="bg-gray-100 inline-flex p-4 rounded-2xl mb-6 border border-gray-200 group-hover:bg-energy/10 transition-colors">
+              <svg class="h-8 w-8 text-primary group-hover:text-energy transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
             </div>
-            <h3 class="font-outfit font-bold text-2xl text-white mb-3">Dojang Elite</h3>
-            <p class="text-gray-400 font-light text-sm leading-relaxed">
+            <h3 class="font-outfit font-bold text-2xl text-primary mb-3">Dojang Elite</h3>
+            <p class="text-gray-600 font-light text-sm leading-relaxed">
               Instalaciones inmaculadas, equipo de impacto de primer nivel y pisos acolchados para una práctica 100% segura.
             </p>
           </div>
@@ -77,8 +77,8 @@ import WhatsAppButton from '../components/WhatsAppButton.astro';
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="text-center mb-16">
           <span class="text-energy font-semibold tracking-widest uppercase text-sm mb-4 inline-block">Nuestros Programas</span>
-					<h2 class="text-4xl md:text-5xl font-outfit font-bold text-white mb-4">Elige Tu Camino</h2>
-          <p class="text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+					<h2 class="text-4xl md:text-5xl font-outfit font-bold text-primary mb-4">Elige Tu Camino</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
             Dos artes complementarias, dos propósitos distintos. Encuentra la disciplina que se alinee con tus objetivos personales.
           </p>
 				</div>
@@ -116,16 +116,16 @@ import WhatsAppButton from '../components/WhatsAppButton.astro';
 		<TestimonialSlider />
 
 		<!-- Horarios Preview -->
-		<section class="py-24 relative z-10">
-      <div class="absolute inset-0 bg-primary/80 backdrop-blur-3xl -z-10"></div>
+		<section class="py-24 relative z-10 bg-transparent">
+      <div class="absolute inset-0 bg-white/80 backdrop-blur-3xl -z-10"></div>
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="flex flex-col md:flex-row justify-between items-end mb-12">
 					<div class="max-w-xl">
             <span class="text-accent font-semibold tracking-widest uppercase text-sm mb-4 inline-block">Agenda</span>
-						<h2 class="text-4xl md:text-5xl font-outfit font-bold text-white mb-4">Próximas Clases</h2>
-						<p class="text-gray-400 font-light leading-relaxed">Ofrecemos amplios horarios buscando siempre adaptarnos a tu ritmo de vida.</p>
+						<h2 class="text-4xl md:text-5xl font-outfit font-bold text-primary mb-4">Próximas Clases</h2>
+						<p class="text-gray-600 font-light leading-relaxed">Ofrecemos amplios horarios buscando siempre adaptarnos a tu ritmo de vida.</p>
 					</div>
-					<a href="/horarios" class="mt-6 md:mt-0 group relative inline-flex items-center text-sm font-outfit font-bold uppercase tracking-widest text-accent hover:text-white transition-colors">
+					<a href="/horarios" class="mt-6 md:mt-0 group relative inline-flex items-center text-sm font-outfit font-bold uppercase tracking-widest text-accent hover:text-primary transition-colors">
             Ver Calendario Completo
             <svg class="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
 					</a>
@@ -135,25 +135,22 @@ import WhatsAppButton from '../components/WhatsAppButton.astro';
 		</section>
 
     <!-- FAQ -->
-    <section class="py-24 bg-primary/50">
+    <section class="py-24 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-16">
           <span class="text-gray-500 font-semibold tracking-widest uppercase text-sm mb-4 inline-block">Dudas Comunes</span>
-          <h2 class="text-4xl md:text-5xl font-outfit font-bold text-white mb-6">Preguntas Frecuentes</h2>
+          <h2 class="text-4xl md:text-5xl font-outfit font-bold text-primary mb-6">Preguntas Frecuentes</h2>
         </div>
         <FAQAccordion />
       </div>
     </section>
 
 		<!-- Pre-Footer CTA con ContactForm -->
-		<section class="py-24 relative overflow-hidden">
-      <!-- Glow -->
-      <div class="absolute inset-0 bg-gradient-to-t from-primary to-primary z-0"></div>
-      
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+		<section class="py-24 relative overflow-hidden bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-16 max-w-3xl mx-auto">
-          <h2 class="text-4xl md:text-6xl font-outfit font-bold text-white mb-6">¿Listo para ascender?</h2>
-					<p class="text-xl text-gray-400 font-light">
+          <h2 class="text-4xl md:text-6xl font-outfit font-bold text-primary mb-6">¿Listo para ascender?</h2>
+					<p class="text-xl text-gray-600 font-light">
 						Toma el control. Reserva hoy mismo tu clase muestra interactuando en nuestro portal digital a continuación.
 					</p>
 				</div>

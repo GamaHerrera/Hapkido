@@ -19,10 +19,10 @@ const {
 } = Astro.props;
 ---
 
-<div class="group relative flex flex-col rounded-3xl overflow-hidden glass-card transition-all duration-700 transform hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.8)] border border-white/5 hover:border-white/20">
+<div class="group relative flex flex-col rounded-3xl overflow-hidden glass-card transition-all duration-700 transform hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-gray-300">
   
   <div class="relative h-72 sm:h-80 overflow-hidden shrink-0">
-    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent z-10 w-full h-full"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent z-10 w-full h-full"></div>
     <img 
       src={image} 
       alt={`Clase de ${title}`} 
@@ -34,8 +34,8 @@ const {
     </div>
   </div>
   
-  <div class="p-8 pb-10 flex-grow flex flex-col relative z-20 bg-primary/40 backdrop-blur-md">
-    <p class="text-gray-400 mb-8 leading-relaxed font-light text-sm">
+  <div class="p-8 pb-10 flex-grow flex flex-col relative z-20 bg-white/40 backdrop-blur-md">
+    <p class="text-gray-600 mb-8 leading-relaxed font-light text-sm">
       {description}
     </p>
     
@@ -45,14 +45,14 @@ const {
           <svg class="h-5 w-5 text-accent mr-3 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7" />
           </svg>
-          <span class="text-gray-300 font-light text-sm">{feature}</span>
+          <span class="text-gray-700 font-light text-sm">{feature}</span>
         </li>
       ))}
     </ul>
     
     <a 
       href={link} 
-      class="inline-flex w-full items-center justify-center py-4 bg-white/5 border border-white/10 text-white font-outfit font-semibold uppercase tracking-widest text-sm rounded-xl hover:bg-white hover:text-primary transition-all duration-300"
+      class="inline-flex w-full items-center justify-center py-4 bg-primary text-white font-outfit font-semibold uppercase tracking-widest text-sm rounded-xl hover:bg-accent transition-all duration-300"
     >
       {linkText}
       <svg class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>

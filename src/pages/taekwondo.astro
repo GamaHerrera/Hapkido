@@ -9,7 +9,7 @@ import HeroSection from '../components/HeroSection.astro';
 <Layout title="Taekwondo | CWH Jaguares">
 	<Navbar />
 	
-	<main class="bg-primary">
+	<main class="relative bg-transparent">
 		<HeroSection 
       headline="Taekwondo Deportivo"
       subheadline="Velocidad, agilidad y disciplina olímpica. El arte marcial perfecto para el desarrollo físico y mental desde edades tempranas."
@@ -22,11 +22,11 @@ import HeroSection from '../components/HeroSection.astro';
 		<section class="py-24 relative">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div class="glass-card rounded-3xl p-10 md:p-14 border border-white/5 mb-16 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.8)]">
+        <div class="glass-card rounded-3xl p-10 md:p-14 border border-gray-200 mb-16 shadow-xl">
           <span class="text-accent font-semibold tracking-widest uppercase text-sm mb-4 inline-block">El Camino del Puño y Pie</span>
-          <h2 class="text-3xl md:text-4xl font-outfit font-bold text-white mb-8">¿Qué es el Taekwondo?</h2>
+          <h2 class="text-3xl md:text-4xl font-outfit font-bold text-primary mb-8">¿Qué es el Taekwondo?</h2>
           
-          <div class="prose prose-invert prose-lg max-w-none text-gray-400 font-light leading-relaxed">
+          <div class="prose prose-lg max-w-none text-gray-600 font-light leading-relaxed">
             <p class="mb-6">
               El Taekwondo es un arte marcial coreano moderno que destaca por su énfasis en las patadas espectaculares al nivel de la cabeza, patadas en salto con giro y técnicas de pateo rápido. Más allá del aspecto físico, es un sistema completo de entrenamiento mental y filosófico.
             </p>
@@ -37,32 +37,32 @@ import HeroSection from '../components/HeroSection.astro';
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div class="glass-card rounded-3xl p-8 border border-white/5">
-            <div class="bg-white/5 inline-flex p-3 rounded-xl mb-6 shadow-inner border border-white/10">
-              <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div class="glass-card rounded-3xl p-8 border border-gray-200 bg-white shadow-sm">
+            <div class="bg-gray-100 inline-flex p-3 rounded-xl mb-6 shadow-inner border border-gray-200">
+              <svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 class="font-outfit font-bold text-xl text-white mb-3">Programa Infantil</h3>
-            <p class="text-gray-400 font-light text-sm leading-relaxed">
+            <h3 class="font-outfit font-bold text-xl text-primary mb-3">Programa Infantil</h3>
+            <p class="text-gray-600 font-light text-sm leading-relaxed">
               Diseñado para niños desde los 4 años. Enfocado en desarrollo psicomotriz, seguir instrucciones, respeto a los compañeros, y canalizar su energía de forma positiva.
             </p>
           </div>
-          <div class="glass-card rounded-3xl p-8 border border-white/5">
+          <div class="glass-card rounded-3xl p-8 border border-gray-200 bg-white shadow-sm">
             <div class="bg-energy/10 inline-flex p-3 rounded-xl mb-6 shadow-inner border border-energy/20">
               <svg class="h-6 w-6 text-energy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-            <h3 class="font-outfit font-bold text-xl text-white mb-3">Programa Juvenil y Adultos</h3>
-            <p class="text-gray-400 font-light text-sm leading-relaxed">
+            <h3 class="font-outfit font-bold text-xl text-primary mb-3">Programa Juvenil y Adultos</h3>
+            <p class="text-gray-600 font-light text-sm leading-relaxed">
               Enfocado en acondicionamiento físico extremo, técnica competitiva (combate y formas), flexibilidad y desarrollo de reflejos agudos bajo presión real.
             </p>
           </div>
         </div>
 
         <div class="text-center">
-          <h2 class="text-2xl md:text-3xl font-outfit font-bold text-white mb-8">Beneficios Comprobados</h2>
+          <h2 class="text-2xl md:text-3xl font-outfit font-bold text-primary mb-8">Beneficios Comprobados</h2>
           <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
             {[
               "Aumento brutal de flexibilidad física",
@@ -72,7 +72,7 @@ import HeroSection from '../components/HeroSection.astro';
               "Incrementa autoestima de los jóvenes",
               "Combate efectivo contra acoso/bullying"
             ].map(benefit => (
-              <li class="flex items-center text-gray-300 bg-white/[0.02] p-4 rounded-xl border border-white/5">
+              <li class="flex items-center text-gray-700 bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
                 <svg class="h-5 w-5 text-accent mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
@@ -85,7 +85,7 @@ import HeroSection from '../components/HeroSection.astro';
 		</section>
     
     <!-- CTA Banner -->
-    <section class="py-20 relative overflow-hidden bg-primary w-full border-t border-white/10 shadow-[0_-20px_40px_rgba(0,0,0,0.5)]">
+    <section class="py-20 relative overflow-hidden bg-primary w-full border-t border-transparent">
       <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
       <div class="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-accent/20 rounded-full blur-[100px] pointer-events-none"></div>
 
